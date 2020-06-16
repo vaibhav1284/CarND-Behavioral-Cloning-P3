@@ -31,7 +31,7 @@ python drive.py model.h5
 #### 3. Submission code is usable and readable
 The code is readable having appropriate sections for specific tasks which are self-explanatory and easy to understand.  The code was developed in python using Udacity project workspace. The model was trained and verified using GPU. 
 
-The below packages were used to develop code.
+The below packages were used to develop code : 
 ```
 import csv
 import numpy as np
@@ -48,9 +48,11 @@ from keras.layers import Lambda, Cropping2D
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
+During the project , two models were tested namely Lenet and Nvidia end-end deep learning. For simple scenarios like straight driving, easy turns LeNet performed well but for difficult scenarios like steep turns (after the bridge) the model failed to predict correct sterring angle values. Therefor,Nvidia model was tried and tested for such scenarios. The results obtained were good.
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+![Nvidia Architecture](./examples/Nvidia_Architecture.JPG)
+
+
 
 #### 2. Attempts to reduce overfitting in the model
 
