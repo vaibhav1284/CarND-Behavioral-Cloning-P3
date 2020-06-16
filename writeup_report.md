@@ -82,11 +82,22 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture (model.py lines 18-24) is based on Nvidia architecture with some customization as mentioned below :
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+* Image normalization - using Keras lambda layer
+* Image Cropping - using Keras Cropping2D layer
+* Convolution: 5x5, filter: 24, strides: 2x2, activation: ELU
+* Dropout (0.2)
+* Convolution: 5x5, filter: 36, strides: 2x2, activation: ELU
+* Convolution: 5x5, filter: 48, strides: 2x2, activation: ELU
+* Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+* Convolution: 3x3, filter: 64, strides: 1x1, activation: ELU
+* Flattening
+* Fully connected: neurons: 100, activation: ELU
+* Fully connected: neurons: 50, activation: ELU
+* Fully connected: neurons: 10, activation: ELU
+* Fully connected: neurons: 1 (output)
 
-![alt text][image1]
 
 #### 3. Creation of the Training Set & Training Process
 
