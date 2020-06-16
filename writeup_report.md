@@ -1,13 +1,8 @@
 # **Behavioral Cloning** 
 
-The objective of the project is to develop a system and algorithm with which  car drives through a path in a simulator in autonomous mode without explicit programminng for the driving paths(lanes,road conditions etc.). The method employed is deep lerning to achieve the project objectives. 
+The objective of the project is to develop a system and algorithm with which  car drives through a path in a simulator in autonomous mode without explicit programminng for the driving paths(lanes,road conditions etc.). The method employed is deep learning to achieve the project objectives. 
 
 ![Simulator Image](./examples/Set2_center_2016_12_01_13_33_05_194.jpg)
-
-
-
-
-
 
 The process to develop such a system involves the following steps :  
 * Use the simulator to collect data of good driving behavior
@@ -16,40 +11,38 @@ The process to develop such a system involves the following steps :
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
-
----
 ### Files Submitted & Code Quality
 
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
-
-My project includes the following files:
-* model.py containing the script to create and train the model
-* drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
-* writeup_report.md or writeup_report.pdf summarizing the results
+The below required files are available in the root :
+* model.py file - Python source code of the project to train the model
+* drive.py - Executes the algorithm in simulator
+* model.h5 - Compiled model
+* writeup report - Report having processes and steps
+* video.mp4 - One complete lap video
 
 #### 2. Submission includes functional code
-Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
-```sh
+The car can be driven in the simulator using the compiled model,trained using a deep neural network based on Nvidia End-End deep learning. The car can be driven in the Udacity provided Simulator by executing the below command : 
+
+```
 python drive.py model.h5
 ```
 
 #### 3. Submission code is usable and readable
+The code is readable having appropriate sections for specific tasks which are self-explanatory and easy to understand.  The code was developed in python using Udacity project workspace. The model was trained and verified using GPU. 
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+The below packages were used to develop code.
+```
+import csv
+import numpy as np
+import cv2
+from tqdm import tqdm 
+import keras
+from keras.models import Sequential
+from keras.layers.core import Dense, Flatten, Activation, Dropout
+from keras.layers.convolutional import Convolution2D
+from keras.layers import Lambda, Cropping2D
+```
 
 ### Model Architecture and Training Strategy
 
