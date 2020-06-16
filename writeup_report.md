@@ -1,14 +1,15 @@
 # **Behavioral Cloning** 
 
-## Writeup Template
+The objective of the project is to develop a system and algorithm with which  car drives through a path in a simulator in autonomous mode without explicit programminng for the driving paths(lanes,road conditions etc.). The method employed is deep lerning to achieve the project objectives. 
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+![Simulator Image](./examples/Set2_center_2016_12_01_13_33_05_194.jpg)
 
----
 
-**Behavioral Cloning Project**
 
-The goals / steps of this project are the following:
+
+
+
+The process to develop such a system involves the following steps :  
 * Use the simulator to collect data of good driving behavior
 * Build, a convolution neural network in Keras that predicts steering angles from images
 * Train and validate the model with a training and validation set
