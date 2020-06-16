@@ -52,23 +52,20 @@ During the project , two models were tested namely Lenet and Nvidia end-end deep
 
 ![Nvidia Architecture](./examples/Nvidia_Architecture.JPG)
 
-
+The model performed well for the project data but was failing in certain scenarios for which regularization was added.
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+Regularization was needed to reduce overfitting the model and to perform well for the testing scenarios. Drop out layers were introduced in the model to reduce overfitting. Multiple eperiements were conducted to arrive at the correct dropout layer position and frequency.
+Finally, one drop out layer worked well for this project.(model.py line 98)
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 116). I tested the model with epoch sizes in the range from 2-10. The spoch size of 5 worked well.
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
-
-For details about how I created the training data, see the next section. 
+Udacity provided training data was used to train the model The provided training data was analysed. It had a total of 24,108 images from center,left and right cameras. The training data had a total of 8 laps : 4 clockwise and 4 anti-colckwise. 
 
 ### Model Architecture and Training Strategy
 
