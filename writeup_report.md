@@ -61,7 +61,7 @@ Finally, one drop out layer worked well for this project.(model.py line 98)
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 116). I tested the model with epoch sizes in the range from 2-10. The spoch size of 5 worked well.
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 116). I tested the model with epoch sizes in the range from 2-10. The epoch size of 5 worked well.
 
 #### 4. Appropriate training data
 
