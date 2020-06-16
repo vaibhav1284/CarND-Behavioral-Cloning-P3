@@ -101,28 +101,14 @@ The final model architecture (model.py lines 18-24) is based on Nvidia architect
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+Udacity provided training data was used to train model.The provided training data was analysed to understand the coverage of scenarios for training the model. The provided data was of good quality and high in number. 
 
-![alt text][image2]
+<img src="examples/Set2_left_2016_12_01_13_33_05_194.jpg" width="250" alt="Image1" />  <img src="examples/Set2_center_2016_12_01_13_33_05_194.jpg" width="250" alt="Image1" />  <img src="examples/Se2_right_2016_12_01_13_33_05_194.jpg" width="250" alt="Image1" />  
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+The training data had images from a total of eight laps. Recordings were done in such a way that 4 laps were recorded in clockwise direction and other 4 were in anti-clockwise direction. This ensured that trainig data is being trained for both directions and generalises/learns parameters in a better fashion. 
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+Through debugging and experiements, following observations were noted :
+* Quality of data with diverse scenarios is more important than the number of data.
+* Deep neural network need large number of data (with less bias) for correct predictions.
+* Regularization techniques like dropout layers etc. should be done optimally and carefully else it leads to non-generalised model. 
+* Selecting ROI though image cropping should be done correctly as the cropped data is used to find patterns and is used for trainings/predictions.  
